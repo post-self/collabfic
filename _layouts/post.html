@@ -1,0 +1,31 @@
+---
+layout: base
+---
+
+<div class="post">
+    <h2 class="title">{{ page.title }}</h2>
+    <section class="attribution">
+        {{ page.date | date: "%b %-d, %Y" }} &bullet;
+        {% if page.author %}
+            <a href="/about/contributors#{{ page.author }}">
+                {{ site.data.authors[page.author].name }}
+            </a>
+        {% else %}
+            <em>Anonymous</em>
+        {% endif %}
+        &bullet; Rating: <a href="/about/contributing#ratings">{{ page.rating }}</a>
+        &bullet; Contains {{ page.content_warnings|join:', ' }}
+    </section>
+    <section class="content">
+        {{ content }}
+    </section>
+</div>
+
+<div class="comments expandable">
+    <h2>Comments <span class="caret"></span></h2>
+    <input class="expand-trigger" type="checkbox" />
+    <p>Before posting a comment, be sure to read the <a href="/conduct">code of conduct</a>.</p>
+    <div id="disqus_thread" class="expand-content"></div>
+</div>
+
+<!-- if you are using Disqus, as the above assumes, you should paste the JavaScript snippet here -->

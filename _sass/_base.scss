@@ -1,0 +1,416 @@
+header {
+    border-top-width: 10px;
+
+    h1 {
+        letter-spacing: 5px;
+        font-family: $monospace;
+    }
+
+    img {
+        height: 2em;
+        vertical-align: middle;
+    }
+
+    nav {
+        width: 100%;
+        padding: 0 0 2px 0;
+        margin: 0 0 -1em 0;
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: inline-block;
+                padding-right: 1em;
+            }
+        }
+    }
+}
+
+footer {
+    border-bottom-width: 10px;
+    font-size: 12px;
+    height: 120px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .wrapper {
+        margin-right: 80px;
+
+        div img {
+            vertical-align: middle;
+        }
+    }
+}
+
+article {
+    padding: 2em 0 0 0;
+
+    h2 {
+        margin-top: -0.5em;
+    }
+
+    a {
+        color: $link-regular;
+
+        &:hover,
+        &:visited,
+        &:active {
+            color: $link-visited;
+        }
+    }
+
+    // I like this font, but it's a little tight when mixing italics and
+    // non-italics in the same paragraph
+    em {
+        padding-right: 3px;
+    }
+
+    .license {
+        max-width: 400px;
+        padding-top: 2px;
+        border-top: 1px solid darken($light, 25%);
+        color: darken($light, 25%);
+        font-size: 12px;
+    }
+}
+
+.post {
+    margin: 0 auto;
+    max-width: 640px;
+    line-height: 1.75;
+    font-size: 16px;
+    text-align: justify;
+
+    .title {
+        margin-bottom: 0;
+    }
+
+    .content {
+        margin-top: 1em;
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: $serif;
+            font-style: italic;
+            padding: 0.5em 0 0 0.5em;
+            margin: 0;
+
+            // Dedent first paragraph after a header
+            & + p {
+                text-indent: 0;
+            }
+        }
+
+        // Reset some sizes that browser stylesheets may clobber.
+        h1 { font-size: 2em; }
+        h2 { font-size: 1.75em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.25em; }
+
+        p {
+            margin: 0;
+            padding: 0;
+            text-indent: 1em;
+            letter-spacing: 0.5px;
+        }
+
+        // Dedent first paragraph, and first paragraph after a horizontal rule
+        p:first-of-type, hr + p {
+            text-indent: 0;
+        }
+
+        p.license {
+            margin-top: 2em;
+            text-indent: 0px;
+            text-align: left;
+        }
+    }
+
+    .attribution {
+        font-family: $sans-serif;
+        font-size: 12px;
+    }
+}
+
+.entries {
+    margin-bottom: 1em;
+    max-width: 960px;
+    padding: 0px;
+    text-align: center;
+    @extend %clearfix;
+
+
+    h3 {
+        margin: 0;
+    }
+
+    .entry {
+        position: relative;
+        max-width: 300px;
+        padding: 5px;
+        margin-bottom: 10px;
+        display: inline-block;
+        text-align: left;
+        -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+        box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+    }
+
+    .to-entries {
+        text-align: center;
+    }
+}
+
+.news {
+    margin: 0 auto;
+    max-width: 640px;
+    .entry {
+        h3 {
+            margin-top: 0;
+            margin-bottom: 0.25em;
+
+            small {
+                display: block;
+                font-size: 12px;
+            }
+        }
+
+        .more {
+            margin-top: 0;
+            text-align: right;
+        }
+    }
+
+    .to-entries {
+        text-align: center;
+    }
+}
+
+.excerpt {
+    @extend %callout;
+
+    &.offset {
+        margin: 2em 0;
+    }
+
+    p:first-of-type {
+        margin-top: 0;
+    }
+
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}
+//
+// .pagination {
+//     .page {
+//         width: 33%;
+//         display: inline-block;
+//
+//         &:last-of-type {
+//             width: auto;
+//         }
+//
+//         &.previous {
+//             text-align: right;
+//         }
+//         &.current {
+//             text-align: center;
+//         }
+//     }
+// }
+
+.comments {
+    margin-top: 3em;
+}
+
+.expandable {
+    position: relative;
+    padding-bottom: 1em;
+
+    .expand-trigger {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2em;
+        border: 1px solid white;
+        display: block;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .expand-content {
+        overflow-y: scroll;
+        max-height: 0;
+        -webkit-transition: max-height 0.5s ease;
+        transition: max-height 0.5s ease;
+    }
+
+    .expand-trigger:checked ~ .expand-content {
+        max-height: 400px;
+        -webkit-transition: max-height 0.5s ease;
+        transition: max-height 0.5s ease;
+    }
+}
+
+.author-name {
+    margin-bottom: 0;
+}
+
+.author-bio {
+    margin-top: 1em;
+}
+
+.metadata {
+    font-family: $sans-serif;
+    font-size: 12px;
+
+    .datum {
+        display: block;
+    }
+}
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    border-top:   5px dashed $light;
+    border-right: 5px solid transparent;
+    border-left:  5px solid transparent;
+}
+
+.toc:before {
+    content: 'Contents';
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+@media only screen and (min-width: 960px) {
+
+    footer .wrapper {
+        div {
+            width: 49%;
+            vertical-align: top;
+            display: inline-block;
+            margin-top: 1em;
+
+            &:last-of-type {
+                text-align: right;
+            }
+        }
+    }
+
+    .post .content p {
+        text-indent: 2em;
+    }
+
+    .entries {
+        .entry {
+            height: 500px;
+
+            &:not(:nth-of-type(3)) {
+                margin-right: 10px;
+            }
+
+            h3 {
+                margin: 0;
+                max-height: 90px;
+            }
+
+            .excerpt {
+                height: 325px;
+                overflow-y: scroll;
+                position: relative;
+                padding-top: 15px;
+
+                &:before {
+                    content: 'Excerpt';
+                    position: absolute;
+                    display: block;
+                    top: 0;
+                    left: 0;
+                    padding: 0 4px;
+                    background-color: $dark;
+                    border-bottom-right-radius: 5px;
+                    font-size: 10px;
+                }
+            }
+
+            .more {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                margin: 0;
+                padding: 5px;
+            }
+        }
+    }
+
+    .metadata .datum {
+        display: inline;
+
+        &:not(:last-of-type):after {
+            content: ' • ';
+        }
+    }
+
+    .toc {
+        max-width: 25%;
+        margin: 0 2em 1em 0;
+        padding: 0.5em 0.5em 0.5em auto;
+        float: left;
+        border: 1px solid $dark;
+    }
+
+}
+
+@media only screen and (min-width: 1100px) {
+    body {
+        padding-bottom: 100px;
+    }
+
+    footer {
+        height: 100px;
+        .wrapper {
+            margin: 0 auto;
+        }
+    }
+}
+
+
+@media print {
+    * {
+        color: $dark;
+    }
+
+    header, footer, article {
+        border: none;
+        position: static;
+        margin: 0;
+    }
+
+    header nav, .comments {
+        display: none;
+    }
+
+    footer {
+        svg {
+            display: none;
+        }
+        div {
+            width: 100%;
+        }
+    }
+    .entries .entry {
+        box-shadow: none;
+        float: none;
+        max-width: 960px;
+    }
+}

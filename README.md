@@ -1,2 +1,7 @@
 # collabfic
-A Jekyll base for collaborative fiction projects
+
+`collabfic` is a collaborative fiction project framework to be used in running sites where the users contribute the stories.
+
+## Instances
+
+* [Post-Self](http://post-self.io)

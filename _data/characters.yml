@@ -1,0 +1,7 @@
+# This is just an example of what you can do with a data file.
+qian-guowei:
+  name:
+    full: 'Qián Guōwēi'
+    given: 'Guōwēi'
+    family: 'Qián'
+    zh: '钱郭威'
