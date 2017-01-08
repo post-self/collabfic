@@ -7,8 +7,11 @@ This set of stylesheets is up to you to modify or replace completely. The variab
 $light: #eee;
 $dark: #333;
 $border: darken($dark, 10%);
+$border-inverse: darken($light, 10%);
 $link-regular: #fab;
 $link-visited: darken($link-regular, 25%);
+$link-inverse: #401;
+$link-visited-inverse: darken($link-regular-inverse, 25%);
 $serif: serif;
 $sans-serif: sans-serif;
 $monospace: monospace;
