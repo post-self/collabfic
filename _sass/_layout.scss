@@ -73,6 +73,73 @@ header, footer {
     color: $light;
     border: 5px solid $border;
     border-width: 5px 0;
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+article {
+    padding: 2em 0 0 0;
+
+    a {
+        color: $link-regular;
+
+        &:hover,
+        &:visited,
+        &:active {
+            color: $link-visited;
+        }
+    }
+
+    .license {
+        max-width: 400px;
+        padding-top: 2px;
+        border-top: 1px solid darken($light, 25%);
+        color: darken($light, 25%);
+        font-size: 12px;
+    }
+}
+
+body.inverse {
+    background-color: $dark;
+    color: $light;
+
+    header, footer {
+        background-color: $light;
+        color: $dark;
+        border-color: $border-inverse;
+    }
+
+    a {
+        color: $link-regular-inverse;
+
+        &:hover,
+        &:visited,
+        &:active {
+            color: $link-visited-inverse;
+        }
+    }
+
+    article {
+        padding: 2em 0 0 0;
+
+        .license {
+            border-top: 1px solid lighten($dark, 25%);
+            color: lighten($dark, 25%);
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6, nav {
+        a,
+        a:visited,
+        a:active,
+        a:hover {
+            text-decoration: none;
+            color: $dark;
+        }
+    }
 }
 
 .wrapper {
